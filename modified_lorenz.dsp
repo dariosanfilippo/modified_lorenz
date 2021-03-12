@@ -65,7 +65,7 @@ dt = global_group(
 input(x) = global_group(nentry("[3]Input value", 1, 0, 10, .000001) <: 
     _ * impulse + _ * checkbox("[1]Constant inputs") + 
         x * checkbox("[0]External inputs"));
-impulse = checkbox("[2]Impulse inputs") <: _ - _' : abs;
+impulse = button("[2]Impulse inputs") : ba.impulsify;
 limit = global_group(
     hslider("[8]Saturation limit[scale:exp]", 4, 1, 1024, .000001) : smooth);
 out = global_group(hslider("[9]Output scaling[scale:exp]", 0, 0, 1, .000001) : 
